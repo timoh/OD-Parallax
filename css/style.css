@@ -1,25 +1,17 @@
-/**
- * Parallax Scrolling Tutorial
- * For Smashing Magazine
- * July 2011
- *  
- * Author: Richard Shepherd
- *		   www.richardshepherd.com
- * 		   @richardshepherd   
- */
-
-
 article h2 { font-family: 'Signika'; font-size: 60px; margin: 25px 0; line-height: 1em; }
 
 .story { height: 650px; padding: 0; margin: 0; width: 100%; max-width: 1920px; position: relative; margin: 0 auto; border-top: 1px solid rgba(255,255,255,0.3); border-bottom: 1px solid rgba(0,0,0,0.4); box-shadow: 0 0 50px rgba(0,0,0,0.8);}
 
 #first { background: url(../images/puckered.png) 50% 0 no-repeat fixed; }
-#second { background: url(../images/needle.jpg) 50% 0 no-repeat fixed; }
-#fourth { background: url(../images/crossmix.jpg) 50% 0 no-repeat fixed; }
+#second { background: url(../images/crossmix.jpg) 50% 0 no-repeat fixed; }
+#fourth { background: url(../images/turntables.jpg) 50% 0 no-repeat fixed; }
 #third { background: url(../images/yard.jpg) 50% 0 no-repeat fixed; }
+#speakers { background: url(../images/outdoors.jpg) 50% 0 no-repeat fixed; }
+#turntables { background: url(../images/needle.jpg) 50% bottom no-repeat fixed; }
 #theend { background: url(../images/puckered.png) 50% bottom no-repeat fixed; }
 
-/* Introduction */
+
+/* Logo */
 #first .od-logo { background: url(../images/od-logo.png) 50% 100px no-repeat fixed; min-height: 650px; padding: 0; margin: 0; width: 100%; max-width: 1920px; position: relative; margin: 0 auto; }
 #first article { width: 100%; top: 300px; position: absolute; text-align: center; }
 #first article p,
@@ -28,7 +20,7 @@ article h2 { font-family: 'Signika'; font-size: 60px; margin: 25px 0; line-heigh
 #first article a:hover { color: #fff; }
 
 
-/* Background Only */
+/* Intro – Photo on the right */
 #second .photograph { background: url(../images/gear-bg.png) transparent 40% 100px no-repeat fixed; min-height: 1000px; padding: 0; margin: 0; width: 100%; max-width: 1920px; position: relative; margin: 0 auto; }
 #second { padding: 50px 0;}
 #second article { position: relative; z-index:5;margin-top:-800px; background: url(../images/grain.png) repeat #333; color: #fff; width: 445px; margin-left: 100px; padding: 10px 20px; text-shadow: 0 -1px 0 rgba(0,0,0,0.5); line-height: 1.5em; box-shadow: 0 0 25px rgba(0,0,0,0.3); border: 1px solid rgba(150,150,150,0.1); }
@@ -36,17 +28,27 @@ article h2 { font-family: 'Signika'; font-size: 60px; margin: 25px 0; line-heigh
 #second article a { color: #ff0;}
 
 
-/* Photograph */
+/* Paketti 1 – Photo on the left */
 #third article {  background: url(../images/grain.png) repeat #333; color: #fff; padding: 10px 20px; margin: 100px 0 0 60%; text-shadow: 0 -1px 0 rgba(0,0,0,0.5); line-height: 1.5em; color: #fff; position: absolute; top: 0; box-shadow: 0 0 25px rgba(0,0,0,0.3); border: 1px solid rgba(150,150,150,0.1); }
 #third .photograph { background: url(../images/photo2.png) transparent 40% 100px no-repeat fixed; min-height: 1000px; padding: 0; margin: 0; width: 100%; max-width: 1920px; position: relative; margin: 0 auto;}
 #third article p { width: 300px; margin-bottom: 25px; }
 
-/* HTML5 Video */
+/* Paketti 2 – Photo on the right */
 #fourth article { position:relative; z-index:5; background: url(../images/grain.png) repeat #333; color: #fff; width: 445px; margin-top:-900px; margin-left: 100px; padding: 10px 20px; text-shadow: 0 -1px 0 rgba(0,0,0,0.5); line-height: 1.5em; box-shadow: 0 0 25px rgba(0,0,0,0.3); border: 1px solid rgba(150,150,150,0.1); }
 #fourth article p { width: 300px; margin: 50px 0; }
 #fourth .photograph { background: url(../images/gear2-bg.png) transparent 40% 100px no-repeat fixed; min-height: 1000px; padding: 0; margin: 0; width: 100%; max-width: 1920px; position: relative; z-index:0; margin: 0 auto; }
 
-/* The End */
+/* Kaiuttimet – Photo on the left */
+#speakers article { position:relative; z-index:5; background: url(../images/grain.png) repeat #333; color: #fff; width: 445px; margin: -900px 0 0 60%; padding: 10px 20px; text-shadow: 0 -1px 0 rgba(0,0,0,0.5); line-height: 1.5em; box-shadow: 0 0 25px rgba(0,0,0,0.3); border: 1px solid rgba(150,150,150,0.1); }
+#speakers article p { width: 300px; margin: 50px 0; }
+#speakers .photograph { background: url(../images/art312.png) transparent 40% 100px no-repeat fixed; min-height: 1000px; padding: 0; margin: 0; width: 100%; max-width: 1920px; position: relative; z-index:0; margin: 0 auto; }
+
+/* Levarit – Photo on the right */
+#turntables article { position:relative; z-index:5; background: url(../images/grain.png) repeat #333; color: #fff; width: 445px; margin-top:-900px; margin-left: 100px; padding: 10px 20px; text-shadow: 0 -1px 0 rgba(0,0,0,0.5); line-height: 1.5em; box-shadow: 0 0 25px rgba(0,0,0,0.3); border: 1px solid rgba(150,150,150,0.1); }
+#turntables article p { width: 300px; margin: 50px 0; }
+#turntables .photograph { background: url(../images/tech12.png) transparent 40% 100px no-repeat fixed; min-height: 1000px; padding: 0; margin: 0; width: 100%; max-width: 1920px; position: relative; z-index:0; margin: 0 auto; }
+
+/* The End – Centered*/
 #theend .byebye { background: url(../images/od-logo.png) 40% 100px no-repeat fixed; height: 1000px; padding: 0; margin: 0; width: 100%; max-width: 1920px; position: relative; margin: 0 auto; z-index:0;}
 #theend article { position:relative; z-index:5; color: #fff; width: 445px; margin-left: 100px; padding: 10px 20px; text-shadow: 0 -1px 0 rgba(0,0,0,0.5); line-height: 1em; margin: -1000px auto;}
 #theend article p { text-align:center; width: 300px; margin: 10px 0;}
@@ -59,3 +61,9 @@ a, a:active, a:visited {
 a:hover {
 	color: white;
 }
+
+/**
+ *  
+ * Author of Original Template: Richard Shepherd
+ *
+ */
