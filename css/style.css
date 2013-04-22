@@ -29,7 +29,7 @@ article h2 { font-family: 'Signika'; font-size: 4.5em; margin: 25px 0; line-heig
 /* Intro – Photo on the right */
 #second .photograph { background: url(../images/gear-bg.png) transparent 40% 100px no-repeat fixed; min-height: 1000px; padding: 0; margin: 0; width: 100%; max-width: 1920px; position: relative; margin: 0 auto; }
 #second { padding: 50px 0;}
-#second article { position: relative; z-index:5;margin-top:-800px; background: url(../images/grain.png) repeat #333; color: #fff; width: 445px; margin-left: 100px; padding: 10px 20px; text-shadow: 0 -1px 0 rgba(0,0,0,0.5); line-height: 1.5em; box-shadow: 0 0 25px rgba(0,0,0,0.3); border: 1px solid rgba(150,150,150,0.1); }
+#second article { position: relative; z-index:5;margin-top:-1000px; background: url(../images/grain.png) repeat #333; color: #fff; width: 445px; margin-left: 100px; padding: 10px 20px; text-shadow: 0 -1px 0 rgba(0,0,0,0.5); line-height: 1.5em; box-shadow: 0 0 25px rgba(0,0,0,0.3); border: 1px solid rgba(150,150,150,0.1); }
 #second article p { margin-bottom: 25px; }
 #second article a { color: #ff0;}
 
