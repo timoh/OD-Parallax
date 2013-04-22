@@ -86,6 +86,10 @@ div.price p {
 	margin-top:50px;
 }
 
+.textbox a {
+	display:block;
+}
+
 .navigation {
 	position:fixed;
 	width:100% !important;
