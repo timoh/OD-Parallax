@@ -1,11 +1,14 @@
-article h2 { font-family: 'Signika'; font-size: 4.5em; margin: 25px 0; line-height: 1em; }
-
+/* Resize story for bigger size */ 
 .story { height: 900px; padding: 0; margin: 0; width: 100%; max-width: 1920px; position: relative; margin: 0 auto; border-top: 1px solid rgba(255,255,255,0.3); border-bottom: 1px solid rgba(0,0,0,0.4); box-shadow: 0 0 50px rgba(0,0,0,0.8);}
+
+/* */
 
 #first.story {height: 600px !important;}
 #first .od-logo {min-height: 600px !important;}
 
 #theend.story {height: 600px !important;}
+
+/* Heavy images only for wide screens to avoid loading them in mobile devices*/
 
 @media (min-width: 768px) {
 	#first { background: url(../images/puckered.png) 50% 0 no-repeat fixed; }
@@ -39,7 +42,7 @@ article h2 { font-family: 'Signika'; font-size: 4.5em; margin: 25px 0; line-heig
 #second { padding: 50px 0;}
 #second article { position: relative; z-index:5;margin-top:-1000px; background: url(../images/grain.png) repeat #333; color: #fff; width: 445px; margin-left: 100px; padding: 10px 20px; text-shadow: 0 -1px 0 rgba(0,0,0,0.5); line-height: 1.5em; box-shadow: 0 0 25px rgba(0,0,0,0.3); border: 1px solid rgba(150,150,150,0.1); }
 #second article p { margin-bottom: 25px; }
-#second article a { color: #ff0;}
+#second article p a { color: #ff0;}
 
 
 /* Paketti 1 – Photo on the left */
@@ -67,14 +70,30 @@ article h2 { font-family: 'Signika'; font-size: 4.5em; margin: 25px 0; line-heig
 #theend article { position:relative; z-index:5; color: #fff; width: 445px; margin-left: 100px; padding: 10px 20px; text-shadow: 0 -1px 0 rgba(0,0,0,0.5); line-height: 1em; margin: -1000px auto;}
 #theend article p { text-align:center; width: 300px; margin: 10px 0;}
 
-/* Custom steez */
-a, a:active, a:visited {
+/* 
+*
+*
+*
+*
+* Custom steez */
+
+/* Avoid h2 anchors being lit up as links */
+article h2 a, article h2 a:hover, article h2 a:visited {color:white; text-decoration:none;} 
+
+/* Relative font size */
+article h2 { font-family: 'Signika'; font-size: 4.5em; margin: 25px 0; line-height: 1em; }
+
+/* Color paragraph links yellow */
+article p a, article p a:active, article p a:visited {
 	color: #f1e740;
 }
 
-a:hover {
+article p a:hover {
 	color: white;
 }
+
+
+/* Fine tune positioning of price images */
 
 .price img {
 	line-height:0;
@@ -86,9 +105,21 @@ div.price p {
 	margin-top:50px;
 }
 
+/* Make order buttons wide */
+
 .textbox a {
 	display:block;
 }
+
+/* Fine tuning article paragraph */ 
+
+article p {
+	font-family: 'Oxygen', 'sans-serif';
+	font-size:1.1em;
+	text-align:left;
+}
+
+/* Handle the menu */
 
 .navigation {
 	position:fixed;
@@ -100,11 +131,12 @@ div.price p {
 	color: white
 }
 
+
 #menu {
 	margin: auto;
 	width: 50%;
 	text-align:center;
-	font-family: 'Source Sans Pro', 'sans-serif'
+	font-family: 'Source Sans Pro', 'sans-serif';
 }
 
 #menu li#title {
