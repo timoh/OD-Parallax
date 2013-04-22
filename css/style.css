@@ -15,6 +15,14 @@ article h2 { font-family: 'Signika'; font-size: 4.5em; margin: 25px 0; line-heig
 	#speakers { background: url(../images/outdoors.jpg) 50% 0 no-repeat fixed; }
 	#turntables { background: url(../images/needle.jpg) 50% bottom no-repeat fixed; }
 	#theend { background: url(../images/puckered.png) 50% bottom no-repeat fixed; }
+	
+	#menu li {
+		display:inline;
+		line-height:2;
+		margin-right:2em;
+		vertical-align:middle;
+	}
+	
 }
 
 /* Logo */
@@ -80,11 +88,12 @@ div.price p {
 
 .navigation {
 	position:fixed;
+	width:100% !important;
 	background-color:black;
 	padding-top:100px;
 	min-height:50px;
 	margin-top:-390px;
-	color: white;
+	color: white
 }
 
 #menu {
@@ -106,13 +115,6 @@ div.price p {
 #menu li a:hover  {
 	color:yellow;
 	text-decoration:underline;
-}
-
-#menu li {
-	display:inline;
-	line-height:2;
-	margin-right:2em;
-	vertical-align:middle;
 }
 
 
@@ -140,7 +142,16 @@ div.price p {
 	
 	article h2 { 
 		font-size: 3em; 
-	}	
+	}
+	
+	#menu li {
+		list-style-type: none;
+		line-height:1.5;
+		margin-right:2em;
+		vertical-align:middle;
+		
+	}
+		
 }
 
 /**
