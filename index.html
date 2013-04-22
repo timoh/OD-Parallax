@@ -12,6 +12,7 @@
   <meta property="og:image" content="http://www.opendecks.fi/laitevuokraus_uusi/images/od-logo.png"/>
 
   <link href='http://fonts.googleapis.com/css?family=Signika:600' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
   <link rel="stylesheet" href="css/style.css">
@@ -22,8 +23,23 @@
   <div id="main" role="main">
 
 	<!-- Section #1 / Logo -->
-	<section id="first" class="story" data-speed="8" data-type="background">    	
-		<div class="od-logo" data-type="sprite" data-offsetY="100" data-Xposition="50%" data-speed="-2"></div>		
+	<section id="first" class="story" data-speed="8" data-type="background">
+	      	
+		<div class="od-logo" data-type="sprite" data-offsetY="100" data-Xposition="50%" data-speed="-2"></div>
+		<article class="navigation"><div id="menu">
+		  
+		  <ul>
+		    
+		    <li id="title"><a href="/">Open Decks ry – Laitevuokraus</a></li>
+		    <li><a href="#perusasiatLink" class="scrolla">Perusasiat</a></li>
+		    <li><a href="#paketti1Link" class="scrolla">Paketti 1</a></li>
+		    <li><a href="#paketti2Link" class="scrolla">Paketti 2</a></li>
+		    <li><a href="#kaiuttimetLink" class="scrolla">Kaiuttimet</a></li>
+		    <li><a href="#levaritLink" class="scrolla">Levysoittimet ja dj-mikseri</a></li>
+		    
+		  </ul>
+		  
+		</div></article>		
 		<article>
 
 			<img src="images/laitevuokraus.png" alt="laitevuokraus" width="711" height="242" />
@@ -35,7 +51,7 @@
 	  <div class="photograph" data-type="sprite" data-offsetY="700" data-Xposition="75%" data-speed="1.15"></div>
 		<article>
 		  
-			<h2>Perusasiat</h2>
+			<h2><a name="perusasiatLink" id="perusasiatLink">Perusasiat</a></h2>
 		    	<p>DJ-yhdistys Open Decks ry vuokraa dj-soittimiaan sekä äänentoistolaitteita pääkaupunkiseudulla.</p>
 		    	
 		    	
@@ -56,7 +72,7 @@
 	<section id="third" class="story" data-speed="6" data-type="background" data-offsetY="250">    	
 		<div class="photograph" data-type="sprite" data-offsetY="1100" data-Xposition="25%" data-speed="2.25"></div>
     	<article>
-    		<h2>Paketti 1</h2>
+    		<h2><a name="paketti1Link" id="paketti1Link">Paketti 1</a></h2>
 	    	<div class="textbox">    	
 		    	<p>Paketti 1 sisältää kaiken tarvittavan isompiinkin bileisiin mukaanlukien äänentoistot, levysoittimet, mikserin, läppärin ja Seraton.
 		    	  <br /><br />(Sisältää RCF:t & Turbosoundit, Technics-soittimet ja Rane-mikseri, Serato SL1, MacBook ja läppäriständi (lisäksi tarvittaessa Driverack))</p>
@@ -76,7 +92,7 @@
 	<section id="fourth" class="story" data-speed="8" data-type="background" data-offsetY="250">
 	    <div class="photograph" data-type="sprite" data-offsetY="1950" data-Xposition="75%" data-speed="1.5"></div>
     	<article>
-    		<h2>Paketti 2</h2>
+    		<h2><a name="paketti2Link" id="paketti2Link">Paketti 2</a></h2>
 	    	<div class="textbox">    	
 		    	<p>Paketti 2 on muuten sama kuin paketti 1, mutta se ei sisällä subbareita, läppäriä eikä Seratoa.<br /><br />(Sisältää RCF:t, Technics-soittimet ja Rane-mikseri)</p>
 		    	
@@ -95,7 +111,7 @@
 	<section id="speakers" class="story" data-speed="8" data-type="background" data-offsetY="400">
 	    <div class="photograph" data-type="sprite" data-offsetY="1500" data-Xposition="25%" data-speed="3"></div>
     	<article>
-    		<h2>Kaiuttimet</h2>
+    		<h2><a name="kaiuttimetLink" id="kaiuttimetLink">Kaiuttimet</a></h2>
 	    	<div class="textbox">    	
 		    	<p>Ammattitason aktiiviset 3-tiekaiuttimet (2 x RCF:n Art 312a) ja niille jalustat ja tarvittavat kaapelit.</p>
 		    	
@@ -113,7 +129,7 @@
 	<section id="turntables" class="story" data-speed="8" data-type="background" data-offsetY="500">
 	    <div class="photograph" data-type="sprite" data-offsetY="2500" data-Xposition="75%" data-speed="2"></div>
     	<article>
-    		<h2>Levysoittimet ja dj-mikseri</h2>
+    		<h2><a name="levaritLink" id="levaritLink">Levysoittimet ja dj-mikseri</a></h2>
 	    	<div class="textbox">    	
 		    	<p>Legendaariset suoravetoiset DJ-levysoittimet (2 x Technics SL-1210mk2) ja DJ-mikseri (Rane TTM-56, 2-kanavainen battlemikseri, plugilähdöillä).</p>
 		    	
@@ -173,6 +189,7 @@
   <script src='js/libs/jquery-1.6.1.min.js'></script>
   <script src="js/script.js"></script>
   <script src="js/ping.js"></script>
+  <script src="js/scrolla.js"></script>
   <!--[if lt IE 7 ]>
     <script src="js/libs/dd_belatedpng.js"></script>
     <script>DD_belatedPNG.fix("img, .png_bg");
