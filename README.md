@@ -4,6 +4,10 @@ Open Decks Parallax Scrolling Site
 # BASICS
 This site is a fork of the Smashing Mag's parallax tutorial, used to experiment with content and actual impact of such a site, within the constraints of the attached MIT license.
 
+# TODO
+
+*Mobile optimization - right now looks horrible on a smaller screen
+
 
 ### License:
 MIT License
