@@ -105,6 +105,7 @@ div.price p {
 
 #menu li a:hover  {
 	color:yellow;
+	text-decoration:underline;
 }
 
 #menu li {
