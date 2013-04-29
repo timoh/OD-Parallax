@@ -10,7 +10,7 @@ $(document).ready(function(){
 						
 	// Navigation events					
 						
-	$('#nav-id').on('click', function() {
+	$('#nav-od').on('click', function() {
   	ga('send', 'event', 'link', 'click', 'nav-od');
 	});
 	
