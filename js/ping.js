@@ -8,6 +8,6 @@
 $(document).ready(function(){
 						
 	// Ping the Heroku service to wake up the dyno
-	$.ajax('http://localhost:3000');
+	$.ajax('http://laitevuokraus.herokuapp.com/');
 
 }); // document ready
