@@ -5,9 +5,9 @@
  */
 
 // On your marks, get set...
-$(document).ready(function(){
-						
-	// Ping the Heroku service to wake up the dyno
-	$.ajax('http://laitevuokraus.herokuapp.com/');
-
-}); // document ready
+// $(document).ready(function(){
+// 						
+// 	// Ping the Heroku service to wake up the dyno
+// 	$.ajax('http://laitevuokraus.herokuapp.com/');
+// 
+// }); // document ready
