@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>app.yolo.swag</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+  <link rel="stylesheet" href="css/show.css">
+  
+  <link href='http://fonts.googleapis.com/css?family=Signika:600' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Oxygen:300' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300' rel='stylesheet' type='text/css'>
+</head>
+<body>
+  
+  <script type="text/x-handlebars" data-template-name="items" id="items">
+
+      <div class="items-menu">
+        <ul>
+          {{#each model}}
+            <li>{{#linkTo 'item' this}} {{title}}{{/linkTo}}</li> 
+          {{/each}}
+        </ul>
+      </div> <!-- /items-menu -->
+
+
+    <div class="container">
+
+
+
+      <div class="outlet">{{outlet}}</div>
+  
+    </div> <!-- /container -->
+  </script>
+  
+  <script type="text/x-handlebars" id="item">
+    <div class="item">
+        <h1>{{title}}</h1> 
+        
+        <div class="picture">
+          <img {{bindAttr src="photo_url"}} /> 
+        </div>
+        
+        
+        <p class="description">{{description}}</p> 
+        
+        
+        <h4>Paketti sisältää:</h4>
+        <div class="well">
+        <ul class="gear">{{#each gear}} 
+          <li>{{this}}</li>
+        {{/each}}</ul>  <!-- /gear -->
+        </div>
+        
+        
+        <div class="order-here">
+          <p class="price">{{price}}&euro;</p>
+          <p class="small-print">/vrk, 0%ALV</p>
+        
+          <p class=" btn btn-success btn-large">Tilaa tästä!</p>
+        </div>
+    </div> <!-- /item -->
+  </script>
+
+
+  <script src="js/libs/jquery-1.9.1.js"></script>
+  <script src="js/libs/handlebars-1.0.0-rc.3.js"></script>
+  <script src="js/libs/ember-1.0.0-rc.2.js"></script>
+  <script src="js/libs/ember-data.js"></script>
+  
+  <script src="js/app.js"></script>
+
+</body>
+</html>
