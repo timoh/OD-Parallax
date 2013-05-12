@@ -42,18 +42,20 @@ $(document).ready(function(){
 			event.preventDefault();
 			var emailSubject = 'Open Decks Laitevuokraus // Tilaus: '+event.currentTarget.attributes[2].nodeValue;
 			/* Open email client */
-			sendMail(emailSubject);
-			ga('send', 'event', 'app', 'order', 'order-send-email', event.currentTarget.attributes[4].nodeValue);
 			
-			$.get('conversion.html', function(data) {
-				console.log('Thanks for your email!');
-			});
+			ga('send', 'event', 'app', 'order', 'order-send-email', event.currentTarget.attributes[4].nodeValue);
 			
 			// This one requires Visual Website Optimizer
 			if(typeof(_vis_opt_top_initialize) == "function") {
 		    _vis_opt_register_conversion(1,1);
 		  	_vis_opt_pause(500);
 	    }
+	
+			$.get('conversion.html', function(data) {
+				console.log('Thanks for your email!');
+			});
+	
+			sendMail(emailSubject);
 		});
 		
 		// User exits lightbox
