@@ -1,24 +1,13 @@
 /* Add Fancybox Lightbox*/
 $.fancybox.closeBtn = true;
 $(document).ready(function() {
-	$("#order-lightbox").fancybox();
-});
-
-/* Handle conversion tracking */
-$('body').on("click", "#order-lightbox", function(event){
-	event.preventDefault();
-	
-	/* TODO: SETUP event tracking! */
-	
-});
-
-$('body').on("click", "#order-send-email", function(event){
-	event.preventDefault();
-	$.get('conversion.html', function(data) {
-	  alert('Conversion was tracked.');
+	$("#order-lightbox").fancybox({
+		afterClose: function(){
+			// this requires ga_events.js, where this function is defined!
+			exitLightbox();
+		}
 	});
 });
-
 
 /* Setup app */
 App = Ember.Application.create();
@@ -33,6 +22,16 @@ App.Store = DS.Store.extend({
 });
 
 /* Actual logic code starts here */
+
+
+/*
+*
+* LOGIC OF SENDING EMAILS IS CURRENTLY HANDLED IN ga_events.js
+* CONSIDER REFACTORING!
+*
+*
+*/
+
 App.Router.map(function() {
 	this.resource('items', {path: '/'}, function(){
 		this.resource('item', { path: ':item_id' });
@@ -50,8 +49,7 @@ App.Item = DS.Model.extend({
 	photo_url: DS.attr('string'),
 	description: DS.attr('string'),
 	gear: DS.attr('array'),
-	price: DS.attr('string'),
-	fb_conversion_pixel: DS.attr('string')
+	price: DS.attr('string')
 });
 
 
@@ -69,24 +67,50 @@ Handlebars.registerHelper('conversionurl', function(object) {
 App.Item.FIXTURES = [{
 	id: '1',
 	title: "Paketti 1",
-	photo_url: "images/gear-bg.png",
-	description: "Yolo!",
+	photo_url: "images/photo2.png",
+	description: "Paketti 1 sisältää kaiken tarvittavan isompiinkin bileisiin mukaanlukien äänentoistot, levysoittimet, mikserin, läppärin ja Seraton.",
 	gear: [
-		"ZZZZO!",
-		"EEEEEEEOOOOO"
+		"2x RCF Art 312a -aktiivi-3-tiekaiutin",
+		"2x Turbosound TXP-118 -aktiivisubwoofer",
+		"2x Technics SL-1210mk2 -suoravetolevysoitin",
+		"Rane TTM-56S -DJ-mikseri",
+		"Serato Scratch Live SL1 -vinyyliemulaatiojärjestelmä",
+		"Apple MacBook -läppäri",
+		"Tarvittavat kaapelit",
+		"Lisäksi halutessasi: dbx DriveRack DSP"
 	],
-	price: "399",
-	fb_conversion_pixel: "facebook.html"
+	price: "399"
 }, {
 	id: '2',
 	title: "Paketti 2",
-	photo_url: "images/art312.png",
-	description: "SWAG!",
+	photo_url: "images/gear2-bg.png",
+	description: "Paketti 2 on muuten sama kuin paketti 1, mutta se ei sisällä subbareita, läppäriä eikä Seratoa.",
 	gear: [
-		"ZZZZO!",
-		"EEEEEEEOOOOO"
+		"2x RCF Art 312a -aktiivi-3-tiekaiutin",
+		"2x Technics SL-1210mk2 -suoravetolevysoitin",
+		"Rane TTM-56S -DJ-mikseri",
+		"Tarvittavat kaapelit"
 	],
-	price: "299",
-	fb_conversion_pixel: "facebook.html"
+	price: "200"
+}, {
+	id: '3',
+	title: "Kaiuttimet",
+	photo_url: "images/art312.png",
+	description: "Ammattitason aktiiviset 3-tiekaiuttimet (2 x RCF:n Art 312a) ja niille jalustat ja tarvittavat kaapelit.",
+	gear: [
+		"2x RCF Art 312a -aktiivi-3-tiekaiutin",
+		"Tarvittavat kaapelit"
+	],
+	price: "150"
+}, {
+	id: '4',
+	title: "Levysoittimet ja dj-mikseri",
+	photo_url: "images/tech12.png",
+	description: "Legendaariset suoravetoiset DJ-levysoittimet (2 x Technics SL-1210mk2) ja DJ-mikseri (Rane TTM-56, 2-kanavainen battlemikseri, plugilähdöillä).",
+	gear: [
+		"2x Technics SL-1210mk2 -suoravetolevysoitin",
+		"Rane TTM-56S -DJ-mikseri"
+	],
+	price: "150"
 }
 ];

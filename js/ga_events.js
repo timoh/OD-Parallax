@@ -4,9 +4,51 @@
  * Author: TH
  */
 
+var exitLightbox; // make the function available outside
+
 // On your marks, get set...
 $(document).ready(function(){
+	
+	
+	/* Send email with a custom subject, using window.location */
+	var sendMail = function(subject) {
+		if (subject.length < 3) {
+			console.log("Email subject length too short!");
+			return false;
+		} else {
+			var encodedURI = encodeURIComponent(subject);
+			var outputToMAILTO = 'MAILTO:laitevuokraus@opendecks.fi?subject=' + encodedURI;
+			window.location = outputToMAILTO;
+		}
+	};
 						
+	// Conversion events
+	
+		/* Handle conversion tracking */
+		$('body').on("click", "#order-lightbox", function(event){
+			event.preventDefault();
+			ga('send', 'event', 'app', 'order', 'order-lightbox-open');
+		});
+		
+		/* Logic of sending emails when user clicks the order button is handled here, consider refactoring! */
+
+		$('body').on("click", "#order-send-email", function(event){
+			event.preventDefault();
+			var emailSubject = 'Open Decks Laitevuokraus // Tilaus: '+event.currentTarget.attributes[2].nodeValue;
+			
+			/* Open email client */
+			sendMail(emailSubject);
+			ga('send', 'event', 'app', 'order', 'order-send-email');
+			
+			$.get('conversion.html', function(data) {
+				console.log('Thanks for your email!');
+			});
+		});
+		
+		// User exits lightbox
+		exitLightbox = function(){
+			ga('send', 'event', 'app', 'lightbox', 'close');
+		};
 						
 	// Navigation events					
 						
@@ -33,6 +75,10 @@ $(document).ready(function(){
 	$('#nav-levarit').on('click', function() {
   	ga('send', 'event', 'navigation', 'click', 'nav-levarit');
 	});
+	
+	// Navigation in the app
+	
+		// TODO: Handling the navigation events in the app requires fiddling with Ember.js logic -- need to study this a bit more
 	
 	// Perusasiat
 	
@@ -73,5 +119,7 @@ $(document).ready(function(){
 	$('#kysymyksia-yhteydenotto').on('click', function() {
   	ga('send', 'event', 'kysymyksia', 'yhteydenotto', 'kysymyksia-yhteydenotto');
 	});
+	
+	
 
 }); // document ready
