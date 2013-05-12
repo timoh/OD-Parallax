@@ -28,6 +28,7 @@ $(document).ready(function(){
 		$('body').on("click", "#order-lightbox", function(event){
 			event.preventDefault();
 			ga('send', 'event', 'app', 'order', 'order-lightbox-open');
+			ga('ecommerce:send');
 		});
 		
 		/* Logic of sending emails when user clicks the order button is handled here, consider refactoring! */
@@ -99,24 +100,51 @@ $(document).ready(function(){
 	
 	$('#paketti1-tilaa').on('click', function() {
   	ga('send', 'event', 'paketti1', 'order', 'paketti1-tilaa');
+
+		ga('ecommerce:addTransaction', {
+		  'id': '1',
+		  'affiliation': 'Paketti 1',
+		  'revenue': '399',
+		  'currencyCode': 'EUR'  // local currency code.
+		});
 	});
 	
 	// Paketti 2
 	
 	$('#paketti2-tilaa').on('click', function() {
   	ga('send', 'event', 'paketti2', 'order', 'paketti2-tilaa');
+
+		ga('ecommerce:addTransaction', {
+		  'id': '2',
+		  'affiliation': 'Paketti 2',
+		  'revenue': '200',
+		  'currencyCode': 'EUR'  // local currency code.
+		});
+
 	});
 	
 	// Kaiuttimet
 	
 	$('#kaiuttimet-tilaa').on('click', function() {
   	ga('send', 'event', 'kaiuttimet', 'order', 'kaiuttimet-tilaa');
+		ga('ecommerce:addTransaction', {
+		  'id': '3',
+		  'affiliation': 'Kaiuttimet',
+		  'revenue': '150',
+		  'currencyCode': 'EUR'  // local currency code.
+		});
 	});
 	
 	// Levarit
 	
 	$('#levarit-tilaa').on('click', function() {
   	ga('send', 'event', 'levarit', 'order', 'levarit-tilaa');
+		ga('ecommerce:addTransaction', {
+		  'id': '1',
+		  'affiliation': 'Levysoittimet ja dj-mikseri',
+		  'revenue': '150',
+		  'currencyCode': 'EUR'  // local currency code.
+		});
 	});
 	
 	// Kysymyksiä?
