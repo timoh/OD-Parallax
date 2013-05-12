@@ -35,10 +35,9 @@ $(document).ready(function(){
 		$('body').on("click", "#order-send-email", function(event){
 			event.preventDefault();
 			var emailSubject = 'Open Decks Laitevuokraus // Tilaus: '+event.currentTarget.attributes[2].nodeValue;
-			
 			/* Open email client */
 			sendMail(emailSubject);
-			ga('send', 'event', 'app', 'order', 'order-send-email');
+			ga('send', 'event', 'app', 'order', 'order-send-email', event.currentTarget.attributes[4].nodeValue);
 			
 			$.get('conversion.html', function(data) {
 				console.log('Thanks for your email!');
