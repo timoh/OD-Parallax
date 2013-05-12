@@ -28,6 +28,12 @@ $(document).ready(function(){
 		$('body').on("click", "#order-lightbox", function(event){
 			event.preventDefault();
 			ga('send', 'event', 'app', 'order', 'order-lightbox-open');
+			
+			// This one requires Visual Website Optimizer
+	    if(typeof(_vis_opt_top_initialize) == "function") {
+		     _vis_opt_goal_conversion(201);
+		    _vis_opt_pause(500);
+	    }
 		});
 		
 		/* Logic of sending emails when user clicks the order button is handled here, consider refactoring! */
@@ -99,7 +105,12 @@ $(document).ready(function(){
 	
 	$('#paketti1-tilaa').on('click', function() {
   	ga('send', 'event', 'paketti1', 'order', 'paketti1-tilaa');
-		
+
+		// This one requires Visual Website Optimizer
+		if(typeof(_vis_opt_top_initialize) == "function") {
+	     _vis_opt_goal_conversion(200);
+	    _vis_opt_pause(500);
+    }
 	});
 	
 	// Paketti 2
@@ -107,18 +118,35 @@ $(document).ready(function(){
 	$('#paketti2-tilaa').on('click', function() {
   	ga('send', 'event', 'paketti2', 'order', 'paketti2-tilaa');
 
+		// This one requires Visual Website Optimizer
+		if(typeof(_vis_opt_top_initialize) == "function") {
+	     _vis_opt_goal_conversion(200);
+	    _vis_opt_pause(500);
+    }
 	});
 	
 	// Kaiuttimet
 	
 	$('#kaiuttimet-tilaa').on('click', function() {
   	ga('send', 'event', 'kaiuttimet', 'order', 'kaiuttimet-tilaa');
+
+		// This one requires Visual Website Optimizer
+		if(typeof(_vis_opt_top_initialize) == "function") {
+	     _vis_opt_goal_conversion(200);
+	    _vis_opt_pause(500);
+    }
 	});
 	
 	// Levarit
 	
 	$('#levarit-tilaa').on('click', function() {
   	ga('send', 'event', 'levarit', 'order', 'levarit-tilaa');
+
+		// This one requires Visual Website Optimizer
+		if(typeof(_vis_opt_top_initialize) == "function") {
+	     _vis_opt_goal_conversion(200);
+	    _vis_opt_pause(500);
+    }
 	});
 	
 	// Kysymyksiä?
