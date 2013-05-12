@@ -43,6 +43,12 @@ $(document).ready(function(){
 			$.get('conversion.html', function(data) {
 				console.log('Thanks for your email!');
 			});
+			
+			// This one requires Visual Website Optimizer
+			if(typeof(_vis_opt_top_initialize) == "function") {
+		    _vis_opt_register_conversion(1,1);
+		  	_vis_opt_pause(500);
+	    }
 		});
 		
 		// User exits lightbox
