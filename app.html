@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
   <link rel="stylesheet" href="css/show.css">
+  <link rel="stylesheet" href="css/jquery.fancybox.css?v=2.1.4">
   
   <link href='http://fonts.googleapis.com/css?family=Signika:600' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Oxygen:300' rel='stylesheet' type='text/css'>
@@ -18,16 +19,14 @@
 
       <div class="items-menu">
         <ul>
+          <li><a href="index.html">Takaisin</a></li>
           {{#each model}}
             <li>{{#linkTo 'item' this}} {{title}}{{/linkTo}}</li> 
           {{/each}}
         </ul>
       </div> <!-- /items-menu -->
 
-
     <div class="container">
-
-
 
       <div class="outlet">{{outlet}}</div>
   
@@ -58,8 +57,33 @@
           <p class="price">{{price}}&euro;</p>
           <p class="small-print">/vrk, 0%ALV</p>
         
-          <p class=" btn btn-success btn-large">Tilaa tästä!</p>
+          <a id="order-lightbox" href="#data"><p class="btn btn-success btn-large">Tilaa tästä!</p></a>
         </div>
+        
+        <div style="display:none">
+          <div id="data" class="lightbox">
+            <h1>Tilaa {{title}}</h1>
+            
+            <h2>Toimitusehdot</h2>
+            
+            <p>Vuokraaja noutaa ja palauttaa vuokraamansa laitteet vuorokauden (24h) sisään, ellei toisin sovita. Tilaus tehdään lähettämällä sähköpostia alla olevasta linkistä. Keskustelussa sovitaan vuokrauksen yksityiskohdat sekä noudon ja palautuksen ajankohdat. Laitteista veloitetaan per vuorokausi. Open Decks ry ei ole arvonlisäverovelvollinen, minkä takia hintoihin ei lisätä arvonlisäveroa (ALV).</p> 
+            
+            <p>Vuokraaja ilmoittaa varauksen yhteydessä laskutusosoitteensa sekä puhelinnumeronsa ja mahdolliset erityistoiveet. Mikäli varaus tehdään alle kaksi vuorokautta (<48h) ennen vuokra-ajankohtaa, maksaa vuokraaja lyhyestä varoitusajasta vuokrahinnasta 25% suuruisen lisämaksun. Open Decks ry:n jäsenet saavat hinnoista 25% alennusta.</p>
+            
+            <h2>Peruutukset</h2>
+            
+            <p>Viime hetken peruutuksista aiheutuu yhdistykselle tulonmenetystä (joudutaan myymään turhaan "eioota") ja turhaa säätöä. Mikäli peruutus tehdään 4-7 vuorokautta ennen vuokrauksen ajankohtaa, joutuu vuokraaja maksamaan 10% vuokrahinnasta. Mikäli peruutus tehdään 1-3 vuorokautta ennen vuokrausta, maksaa vuokraaja 30% vuokrahinnasta. Mikäli peruutus tehdään alle vuorokausi (<24h) ennen ajankohtaa, maksaa vuokraaja 50% vuokrahinnasta.</p> 
+            
+            <p>Ilmoitathan peruutuksesta siis heti, kun mahdollista, niin säästät kuluissa ja säädössä! Kiitos!</p>
+            
+            <h2>Hinta</h2>
+            <p>{{price}}&euro;/vrk (0% ALV)</p>
+            
+            <div class="order-here"><a href="#" id="order-send-email"><p class="btn btn-success btn-large">Tilaa tästä: Lähetä tiedustelu Mikaelille</p></a></div>
+          </div>
+        </div>
+        
+        
     </div> <!-- /item -->
   </script>
 
@@ -68,6 +92,7 @@
   <script src="js/libs/handlebars-1.0.0-rc.3.js"></script>
   <script src="js/libs/ember-1.0.0-rc.2.js"></script>
   <script src="js/libs/ember-data.js"></script>
+  <script src="js/libs/jquery.fancybox.pack.js?v=2.1.4"></script>
   
   <script src="js/app.js"></script>
 

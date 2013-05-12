@@ -1,16 +1,27 @@
-App = Ember.Application.create();
+/* Add Fancybox Lightbox*/
+$.fancybox.closeBtn = true;
+$(document).ready(function() {
+	$("#order-lightbox").fancybox();
+});
 
-App.Router.map(function() {
-	this.resource('items', function(){
-		this.resource('item', { path: ':item_id' });
+/* Handle conversion tracking */
+$('body').on("click", "#order-lightbox", function(event){
+	event.preventDefault();
+	
+	/* TODO: SETUP event tracking! */
+	
+});
+
+$('body').on("click", "#order-send-email", function(event){
+	event.preventDefault();
+	$.get('conversion.html', function(data) {
+	  alert('Conversion was tracked.');
 	});
 });
 
-App.ItemsRoute = Ember.Route.extend({
-	model: function(){
-		return App.Item.find();
-	}
-});
+
+/* Setup app */
+App = Ember.Application.create();
 
 App.Store = DS.Store.extend({
 	revision: 12,
@@ -21,6 +32,19 @@ App.Store = DS.Store.extend({
 	// 	})
 });
 
+/* Actual logic code starts here */
+App.Router.map(function() {
+	this.resource('items', {path: '/'}, function(){
+		this.resource('item', { path: ':item_id' });
+	});
+});
+
+App.ItemsRoute = Ember.Route.extend({
+	model: function(){
+		return App.Item.find();
+	}
+});
+
 App.Item = DS.Model.extend({
 	title: DS.attr('string'),
 	photo_url: DS.attr('string'),
@@ -29,6 +53,18 @@ App.Item = DS.Model.extend({
 	price: DS.attr('string'),
 	fb_conversion_pixel: DS.attr('string')
 });
+
+
+/* Helper for conversion urls */
+
+Handlebars.registerHelper('conversionurl', function(object) {
+  return new Handlebars.SafeString(
+    "<a href='" + object + "'>"
+  );
+});
+
+
+/* DATA STARTS HERE! */
 
 App.Item.FIXTURES = [{
 	id: '1',

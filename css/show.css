@@ -89,3 +89,17 @@ p, .well {
 .btn {
 	margin: auto;
 }
+
+.lightbox {
+	margin:auto;
+	max-width:500px;
+	text-align:justify;
+}
+
+.lightbox h1, .lightbox h2, .lightbox p {
+	color:black;
+}
+
+.order-here p {
+	color:white;
+}
